@@ -1,4 +1,7 @@
-[gd_resource type="CompressedTexture2D" format=3 uid="uid://w07e2x8s3eci"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dvvo7otbxearl"]
+
+[ext_resource type="Texture2D" uid="uid://cbolw1knlfg4v" path="res://Media/Raw Assets/kenney_prototype_textures/PNG/Dark/texture_05.png" id="1_kpuaj"]
 
 [resource]
-load_path = "res://.godot/imported/texture_05.png-fe2955bc90ad8845ce938d59907f499a.s3tc.ctex"
+albedo_texture = ExtResource("1_kpuaj")
+uv1_triplanar = true

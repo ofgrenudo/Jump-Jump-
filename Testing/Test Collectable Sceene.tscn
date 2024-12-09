@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://caxnd44g8v768"]
+
+[ext_resource type="PackedScene" uid="uid://cxyd1tn3eudy1" path="res://Scenes/Common/Collectable/Collectable.tscn" id="1_5ici7"]
+
+[node name="TestCollectableSceene" type="Node3D"]
+
+[node name="Collectable" parent="." instance=ExtResource("1_5ici7")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.996221)

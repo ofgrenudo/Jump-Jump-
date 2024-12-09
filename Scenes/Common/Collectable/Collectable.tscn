@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxyd1tn3eudy1"]
+
+[ext_resource type="Script" path="res://Scenes/Common/Collectable/collectable.gd" id="1_3arl7"]
+[ext_resource type="Material" uid="uid://ch3vxfioopggm" path="res://Media/Textures/tiling_orange_texture.tres" id="1_ol8ll"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8o87h"]
+height = 0.03
+radius = 0.24
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xjvdp"]
+material = ExtResource("1_ol8ll")
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.01
+
+[node name="Collectable" type="StaticBody3D"]
+transform = Transform3D(0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, 0, 0, 0)
+script = ExtResource("1_3arl7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+physics_interpolation_mode = 2
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_8o87h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 1.74846e-07, -7.64274e-15, 0, -4.37114e-08, -1, -1.74846e-07, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_xjvdp")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_8o87h")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvaic65bnw4xn"]
+
+[ext_resource type="Script" path="res://Scenes/Common/Platform Trigger/platform_trigger.gd" id="1_v0dhv"]
+[ext_resource type="Material" uid="uid://cyaltycg5k71m" path="res://Media/Textures/tiling_purple_texture.tres" id="2_upfp7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gbxdn"]
+size = Vector3(2, 1.27039, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2olnd"]
+material = ExtResource("2_upfp7")
+size = Vector3(2, 1, 2)
+
+[node name="PlatformTrigger" type="StaticBody3D"]
+script = ExtResource("1_v0dhv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_gbxdn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_2olnd")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.135193, 0)
+shape = SubResource("BoxShape3D_gbxdn")
+
+[connection signal="area_shape_entered" from="Area3D" to="." method="_on_area_3d_area_shape_entered"]

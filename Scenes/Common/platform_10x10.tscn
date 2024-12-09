@@ -1,19 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://rvxofljhgmvm"]
+[gd_scene load_steps=4 format=3 uid="uid://rvxofljhgmvm"]
 
-[ext_resource type="Texture2D" uid="uid://w07e2x8s3eci" path="res://Media/Textures/tiling_black_texture.tres" id="1_ehn0i"]
+[ext_resource type="Material" uid="uid://dvvo7otbxearl" path="res://Media/Textures/tiling_black_texture.tres" id="1_ehn0i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gstxo"]
 size = Vector3(10, 1, 10)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d08xg"]
-albedo_texture = ExtResource("1_ehn0i")
-uv1_triplanar = true
-
 [sub_resource type="BoxMesh" id="BoxMesh_qcgpf"]
-material = SubResource("StandardMaterial3D_d08xg")
+material = ExtResource("1_ehn0i")
 size = Vector3(10, 1, 10)
 
-[node name="platform" type="StaticBody3D"]
+[node name="platform_10x10" type="StaticBody3D"]
 transform = Transform3D(5.6, 0, 0, 0, 5.6, 0, 0, 0, 5.6, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

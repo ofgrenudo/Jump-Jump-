@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://stmkpvkiv01c"]
+
+[ext_resource type="Material" uid="uid://41wbw0w84xe2" path="res://Media/Textures/tiling_green_texture.tres" id="1_3ygs8"]
+[ext_resource type="Script" path="res://Scenes/Common/Platform Goal/platform_goal.gd" id="1_nygia"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gbxdn"]
+size = Vector3(2, 1.27039, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2olnd"]
+material = ExtResource("1_3ygs8")
+size = Vector3(2, 1, 2)
+
+[node name="PlatformGoal" type="StaticBody3D"]
+script = ExtResource("1_nygia")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_gbxdn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_2olnd")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.135193, 0)
+shape = SubResource("BoxShape3D_gbxdn")
+
+[connection signal="area_shape_entered" from="Area3D" to="." method="_on_area_3d_area_shape_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 var mouse_sensitivity := 0.002
-var move_speed := 5.0
-var jump_velocity := 4.5
+var move_speed := 10.0
+var jump_velocity := 6.5
 var gravity := -9.8  # Adjust gravity strength if needed
 var max_jumps := 2  # Maximum jumps (1 for single jump, 2 for double jump)
 

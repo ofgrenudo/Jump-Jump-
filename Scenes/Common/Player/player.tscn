@@ -1,17 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://piasimovkien"]
+[gd_scene load_steps=5 format=3 uid="uid://piasimovkien"]
 
 [ext_resource type="Script" path="res://Scenes/Common/Player/player.gd" id="1_bglpu"]
-[ext_resource type="Texture2D" uid="uid://bbou3pxoc6etb" path="res://kenney_prototype-textures/PNG/Orange/texture_08.png" id="2_qpc2x"]
+[ext_resource type="Material" uid="uid://ch3vxfioopggm" path="res://Media/Textures/tiling_orange_texture.tres" id="2_3udw8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a4nkc"]
 radius = 0.6
 height = 2.1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qrix"]
-albedo_texture = ExtResource("2_qpc2x")
-
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_n1oqc"]
-material = SubResource("StandardMaterial3D_2qrix")
+material = ExtResource("2_3udw8")
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_bglpu")

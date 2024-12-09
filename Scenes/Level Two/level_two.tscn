@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5gprgqcs2s56"]
 
-[ext_resource type="PackedScene" uid="uid://rvxofljhgmvm" path="res://Scenes/Common/platform.tscn" id="1_5onrm"]
+[ext_resource type="PackedScene" uid="uid://rvxofljhgmvm" path="res://Scenes/Common/platform_10x10.tscn" id="1_5onrm"]
 [ext_resource type="PackedScene" uid="uid://piasimovkien" path="res://Scenes/Common/Player/player.tscn" id="2_5gx7a"]
 [ext_resource type="PackedScene" uid="uid://c00oyqdu1ladv" path="res://Scenes/Level Two/level_two_action.tscn" id="2_w0rbn"]
 [ext_resource type="PackedScene" uid="uid://ddvdydyqy5ama" path="res://Scenes/Level One/level_one_goal.tscn" id="3_g6u5c"]

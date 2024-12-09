@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://48t0r76ljlxo"]
+
+[ext_resource type="PackedScene" uid="uid://rvxofljhgmvm" path="res://Scenes/Common/platform_10x10.tscn" id="1_ke8ww"]
+[ext_resource type="Script" path="res://Scenes/Level Zero/level_zero.gd" id="1_xpdi5"]
+[ext_resource type="PackedScene" uid="uid://d0jnj7fmg86b0" path="res://Scenes/Common/platform_10x5.tscn" id="2_7oup1"]
+[ext_resource type="PackedScene" uid="uid://stmkpvkiv01c" path="res://Scenes/Common/Platform Goal/platform_goal.tscn" id="3_n0ded"]
+[ext_resource type="PackedScene" uid="uid://piasimovkien" path="res://Scenes/Common/Player/player.tscn" id="4_82ort"]
+
+[node name="LevelZero" type="Node3D"]
+script = ExtResource("1_xpdi5")
+
+[node name="platform_10x10" parent="." instance=ExtResource("1_ke8ww")]
+
+[node name="platform_10x5" parent="." instance=ExtResource("2_7oup1")]
+transform = Transform3D(1.06998e-14, 2.44784e-07, 5.6, 5.6, -2.44784e-07, 0, 2.44784e-07, 5.6, -2.44784e-07, 0, 11.3234, 30.5586)
+
+[node name="platform_10x6" parent="." instance=ExtResource("2_7oup1")]
+transform = Transform3D(2.44784e-07, 5.6, -4.89568e-07, 5.6, -2.44784e-07, 0, -2.13997e-14, -4.89568e-07, -5.6, -30.8184, 11.3234, 0.0646572)
+
+[node name="platform_10x7" parent="." instance=ExtResource("2_7oup1")]
+transform = Transform3D(2.44784e-07, 5.6, -4.89568e-07, 5.6, -2.44784e-07, 0, -2.13997e-14, -4.89568e-07, -5.6, 30.8004, 11.3234, 0.0646572)
+
+[node name="platform_10x8" parent="." instance=ExtResource("2_7oup1")]
+transform = Transform3D(5.6, 0, 0, 0, 5.6, 0, 0, 0, 5.6, 0, 0, -55.3996)
+
+[node name="PlatformGoal" parent="." instance=ExtResource("3_n0ded")]
+transform = Transform3D(5.6, 0, 0, 0, 5.6, 0, 0, 0, 5.6, 0, 2.78739, -76.9191)
+
+[node name="player" parent="." instance=ExtResource("4_82ort")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 5.44496, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.477328, 0.878726, 0, -0.878726, -0.477328, 0, 71.9085, -81.1694)

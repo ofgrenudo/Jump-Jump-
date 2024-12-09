@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://xe0mkgnynx65"]
 
-[ext_resource type="PackedScene" uid="uid://rvxofljhgmvm" path="res://Scenes/Common/platform.tscn" id="1_bhaqo"]
+[ext_resource type="PackedScene" uid="uid://rvxofljhgmvm" path="res://Scenes/Common/platform_10x10.tscn" id="1_bhaqo"]
 [ext_resource type="PackedScene" uid="uid://piasimovkien" path="res://Scenes/Common/Player/player.tscn" id="2_b863w"]
 [ext_resource type="PackedScene" uid="uid://ddvdydyqy5ama" path="res://Scenes/Level One/level_one_goal.tscn" id="3_kjdf1"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ddvdydyqy5ama"]
 
 [ext_resource type="Script" path="res://Scenes/Level One/level_one_goal.gd" id="1_68xai"]
-[ext_resource type="Texture2D" uid="uid://yret3etc1yhe" path="res://kenney_prototype-textures/PNG/Green/texture_09.png" id="2_4t02c"]
+[ext_resource type="Texture2D" uid="uid://yret3etc1yhe" path="res://Media/Raw Assets/kenney_prototype_textures/PNG/Green/texture_09.png" id="2_4t02c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gstxo"]
 size = Vector3(2, 1, 2)
