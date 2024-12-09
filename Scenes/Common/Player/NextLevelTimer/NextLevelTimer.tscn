@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dstwa1qqcjgwa"]
+
+[ext_resource type="Script" path="res://Scenes/Common/Player/NextLevelTimer/next_level_timer.gd" id="1_rqksp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_804y2"]
+font_size = 50
+
+[node name="NextLevelTimer" type="CanvasLayer"]
+script = ExtResource("1_rqksp")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 958.0
+offset_top = 476.0
+offset_right = 987.0
+offset_bottom = 545.0
+text = "5
+"
+label_settings = SubResource("LabelSettings_804y2")
+uppercase = true

@@ -11,17 +11,17 @@ script = ExtResource("1_xpdi5")
 
 [node name="platform_10x10" parent="." instance=ExtResource("1_ke8ww")]
 
-[node name="platform_10x5" parent="." instance=ExtResource("2_7oup1")]
-transform = Transform3D(1.06998e-14, 2.44784e-07, 5.6, 5.6, -2.44784e-07, 0, 2.44784e-07, 5.6, -2.44784e-07, 0, 11.3234, 30.5586)
+[node name="platform_10x6" parent="platform_10x10" instance=ExtResource("2_7oup1")]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -5.50328, 2.02204, 0.0115459)
 
-[node name="platform_10x6" parent="." instance=ExtResource("2_7oup1")]
-transform = Transform3D(2.44784e-07, 5.6, -4.89568e-07, 5.6, -2.44784e-07, 0, -2.13997e-14, -4.89568e-07, -5.6, -30.8184, 11.3234, 0.0646572)
+[node name="platform_10x7" parent="platform_10x10" instance=ExtResource("2_7oup1")]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, 5.50007, 2.02204, 0.0115459)
 
-[node name="platform_10x7" parent="." instance=ExtResource("2_7oup1")]
-transform = Transform3D(2.44784e-07, 5.6, -4.89568e-07, 5.6, -2.44784e-07, 0, -2.13997e-14, -4.89568e-07, -5.6, 30.8004, 11.3234, 0.0646572)
+[node name="platform_10x5" parent="platform_10x10" instance=ExtResource("2_7oup1")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 2.02204, 5.45689)
 
 [node name="platform_10x8" parent="." instance=ExtResource("2_7oup1")]
-transform = Transform3D(5.6, 0, 0, 0, 5.6, 0, 0, 0, 5.6, 0, 0, -55.3996)
+transform = Transform3D(5.6, 0, 0, 0, 5.6, 0, 0, 0, 5.6, 0.373, 0, -76.4814)
 
 [node name="PlatformGoal" parent="." instance=ExtResource("3_n0ded")]
 transform = Transform3D(5.6, 0, 0, 0, 5.6, 0, 0, 0, 5.6, 0, 2.78739, -76.9191)
@@ -31,3 +31,8 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 5.44496, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.477328, 0.878726, 0, -0.878726, -0.477328, 0, 71.9085, -81.1694)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 46.7033, -242.789)
+pixel_size = 0.25
+text = "Reach The Green Platform!"

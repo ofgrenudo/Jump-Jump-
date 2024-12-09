@@ -8,7 +8,7 @@ var gravity := -9.8  # Adjust gravity strength if needed
 var max_jumps := 2  # Maximum jumps (1 for single jump, 2 for double jump)
 
 var current_jumps := 0  # Tracks how many jumps the player has performed
-const DEATH_HEIGHT = -10.0  # Height below which the player dies
+const DEATH_HEIGHT = -45.0  # Height below which the player dies
 
 var twist_input := 0.0
 var pitch_input := 0.0
@@ -16,6 +16,7 @@ var pitch_input := 0.0
 @onready var twist_pivot := $TwistPivot
 @onready var pitch_pivot := $TwistPivot/PitchPivot
 @onready var camera := $TwistPivot/PitchPivot/Camera3D
+@onready var DeathScreen := $DeathScreen
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -69,6 +70,8 @@ func _physics_process(delta: float) -> void:
 	pitch_input = 0.0
 
 	# Check if player has fallen below the death height
+	if global_transform.origin.y < (DEATH_HEIGHT/3):
+		_on_player_near_death()
 	if global_transform.origin.y < DEATH_HEIGHT:
 		_on_player_death()
 		
@@ -82,10 +85,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			twist_input = -event.relative.x * mouse_sensitivity
 			pitch_input = -event.relative.y * mouse_sensitivity
 
+func _on_player_near_death() -> void:
+	DeathScreen.visible = true
+
 func _on_player_death() -> void:
 	# Handle player death (e.g., reset position, reload scene)
 	print("Player has died!")
-	
+
+	DeathScreen.visible = false
+		
 	# Reset the player to a starting position
 	global_transform.origin = Vector3(0, 5, 0)  # Replace with your spawn point
 	
