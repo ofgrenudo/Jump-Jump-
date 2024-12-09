@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://piasimovkien"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_bglpu"]
+[ext_resource type="Texture2D" uid="uid://bbou3pxoc6etb" path="res://art/kenney_prototype-textures/PNG/Orange/texture_08.png" id="2_qpc2x"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a4nkc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qrix"]
+albedo_texture = ExtResource("2_qpc2x")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_n1oqc"]
+material = SubResource("StandardMaterial3D_2qrix")
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_bglpu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_a4nkc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_n1oqc")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="TwistPivot" type="Node3D" parent="."]
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0.866271, 0)
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.956024, -0.29329, 0, 0.29329, 0.956024, 0, 0, 0)

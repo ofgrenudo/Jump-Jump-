@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://xe0mkgnynx65"]
+
+[ext_resource type="PackedScene" uid="uid://rvxofljhgmvm" path="res://game_assets/platform.tscn" id="1_hwu1m"]
+[ext_resource type="PackedScene" uid="uid://piasimovkien" path="res://game_assets/player.tscn" id="2_0gmo7"]
+[ext_resource type="PackedScene" uid="uid://ddvdydyqy5ama" path="res://game_assets/level_one_goal.tscn" id="3_ryn7q"]
+
+[node name="TestBed" type="Node3D"]
+
+[node name="platform4" parent="." instance=ExtResource("1_hwu1m")]
+transform = Transform3D(0.820543, -0.0460014, -0.569731, 0.0258806, 0.998724, -0.0433661, 0.570999, 0.0208388, 0.820686, -0.455763, 0.433877, 0.965616)
+
+[node name="platform2" parent="." instance=ExtResource("1_hwu1m")]
+transform = Transform3D(0.932903, -0.174453, -0.315053, 0.183814, 0.982961, 0, 0.309685, -0.0579112, 0.949074, 9.30787, 2.53513, -7.22622)
+
+[node name="platform3" parent="." instance=ExtResource("1_hwu1m")]
+transform = Transform3D(0.469978, -0.0878861, 0.878292, 0.380261, 0.918121, -0.111608, -0.796569, 0.386433, 0.464916, 2.279, 4.57392, -19.8807)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.581754, 0.813365, 1.21201e-08, -0.390883, -0.279577, 0.876953, 0.713283, 0.510171, 0.480576, 25.0685, 29.0648, 7.44685)
+shadow_enabled = true
+
+[node name="player" parent="." instance=ExtResource("2_0gmo7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225189, 2.07161, 4.66309)
+
+[node name="level_one_goal" parent="." instance=ExtResource("3_ryn7q")]
+transform = Transform3D(1.28, 0, 0, 0, 1.28, 0, 0, 0, 1.28, 3.38636, 3.23021, -31.6477)
+
+[node name="FindTheGreenPlatform" type="Label3D" parent="."]
+transform = Transform3D(7.25944, 0, 0, 0, 12.8248, 0, 0, 0, 2.25798, 1.88043, 17.633, -46.8429)
+pixel_size = 0.008
+billboard = 1
+text = "Find The Green Platform"

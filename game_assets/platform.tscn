@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://rvxofljhgmvm"]
+
+[ext_resource type="Texture2D" uid="uid://dlvclabjtdg1q" path="res://art/kenney_prototype-textures/PNG/Dark/texture_09.png" id="1_s260v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gstxo"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbl7b"]
+albedo_texture = ExtResource("1_s260v")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qcgpf"]
+material = SubResource("StandardMaterial3D_xbl7b")
+size = Vector3(10, 1, 10)
+
+[node name="platform" type="StaticBody3D"]
+transform = Transform3D(5.6, 0, 0, 0, 5.6, 0, 0, 0, 5.6, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_gstxo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_qcgpf")
+skeleton = NodePath("../CollisionShape3D")

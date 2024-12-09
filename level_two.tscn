@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5gprgqcs2s56"]
+
+[ext_resource type="PackedScene" uid="uid://rvxofljhgmvm" path="res://game_assets/platform.tscn" id="1_5onrm"]
+[ext_resource type="PackedScene" uid="uid://piasimovkien" path="res://game_assets/player.tscn" id="2_5gx7a"]
+[ext_resource type="PackedScene" uid="uid://c00oyqdu1ladv" path="res://game_assets/level_two_action.tscn" id="2_w0rbn"]
+[ext_resource type="PackedScene" uid="uid://ddvdydyqy5ama" path="res://game_assets/level_one_goal.tscn" id="3_g6u5c"]
+
+[node name="TestBed" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.581754, 0.813365, 3.50285e-07, -0.390883, -0.279577, 0.876953, 0.713283, 0.510171, 0.480576, 25.0685, 29.0648, 7.44685)
+shadow_enabled = true
+
+[node name="player" parent="." instance=ExtResource("2_5gx7a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225189, 2.07161, 4.66309)
+
+[node name="platform7" parent="." instance=ExtResource("1_5onrm")]
+transform = Transform3D(0.346784, -0.0955613, -0.933064, 0.0223217, 0.995355, -0.0936457, 0.93768, 0.0116476, 0.347306, -1.39984, 2.4722, 14.7303)
+
+[node name="platform4" parent="." instance=ExtResource("1_5onrm")]
+transform = Transform3D(0.820543, -0.0460014, -0.569731, 0.0258806, 0.998724, -0.0433661, 0.570999, 0.0208388, 0.820686, -0.455763, 0.433877, 0.965616)
+
+[node name="level_one_goal" parent="." instance=ExtResource("3_g6u5c")]
+transform = Transform3D(1.28, 0, 0, 0, 1.28, 0, 0, 0, 1.28, 3.38636, 3.23021, -31.6477)
+
+[node name="level_two_action" parent="." instance=ExtResource("2_w0rbn")]
+transform = Transform3D(0.443884, -0.122319, -1.19432, 0.0285718, 1.27405, -0.119867, 1.20023, 0.0149089, 0.444552, -1.39984, 2.4722, 27.8246)
+
+[node name="FindTheGreenPlatform" type="Label3D" parent="."]
+transform = Transform3D(7.25944, 0, 0, 0, 12.8248, 0, 0, 0, 2.25798, 1.88043, 17.633, -46.8429)
+pixel_size = 0.008
+billboard = 1
+text = "Purple Brick Road...."
+
+[node name="hidden_platforms_1" parent="." instance=ExtResource("1_5onrm")]
+transform = Transform3D(-0.2507, -0.130836, -0.959182, -0.573108, 0.818591, 0.0381335, 0.78019, 0.559276, -0.280206, 3.30563, 4.3065, -9.92874)
+
+[node name="hidden_platforms_2" parent="." instance=ExtResource("1_5onrm")]
+transform = Transform3D(0.275485, 0.584281, -0.763364, -0.211816, 0.811468, 0.544659, 0.93768, 0.0116475, 0.347306, 11.5233, 0.81353, -19.4526)
+
+[node name="hidden_platforms_3" parent="." instance=ExtResource("1_5onrm")]
+transform = Transform3D(0.820025, -0.0619443, -0.568966, 0.287593, 0.904098, 0.316064, 0.494822, -0.422811, 0.759198, 3.912, 3.71089, -25.418)
