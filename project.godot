@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jump(Jump)"
-run/main_scene="res://level_one.tscn"
+run/main_scene="res://Scenes/Level One/level_one.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 window/size/mode=2
 window/size/resizable=false
+
+[editor]
+
+movie_writer/movie_file="/Users/jwintersbro/Documents/Jump-Jump-/Demo_1.avi"
 
 [input]
 
