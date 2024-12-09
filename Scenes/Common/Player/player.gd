@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 var mouse_sensitivity := 0.002
 var move_speed := 10.0
+var sprint_multiplier := 1.5  # Multiplier for sprinting speed
 var jump_velocity := 6.5
 var gravity := -9.8  # Adjust gravity strength if needed
 var max_jumps := 2  # Maximum jumps (1 for single jump, 2 for double jump)
@@ -24,11 +25,16 @@ func _physics_process(delta: float) -> void:
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var local_direction = Vector3(input_dir.x, 0, input_dir.y)
 
+	# Adjust speed if sprint key (Shift) is pressed
+	var current_speed = move_speed
+	if Input.is_action_pressed("move_sprint"):
+		current_speed *= sprint_multiplier
+
 	# Transform local direction to align with camera orientation
 	if local_direction != Vector3.ZERO:
 		var rotated_direction = (twist_pivot.basis * local_direction).normalized()
-		velocity.x = rotated_direction.x * move_speed
-		velocity.z = rotated_direction.z * move_speed
+		velocity.x = rotated_direction.x * current_speed
+		velocity.z = rotated_direction.z * current_speed
 	else:
 		# Dampen velocity when no input is provided
 		velocity.x = move_toward(velocity.x, 0, move_speed * delta)
