@@ -17,5 +17,5 @@ func _process(delta: float) -> void:
 		PlayerNextLevelDisplay.visible = true
 		PlayerNextLevelDisplay.StartCountdown()
 		if (PlayerNextLevelDisplay.GetTimeLeft() == 0.0):
-			get_tree().change_scene_to_file("res://Scenes/Level One/level_one.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Level Two/level_two.tscn")
 			pass

@@ -20,8 +20,8 @@ transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.821
 [node name="platform_10x5" parent="platform_10x10" instance=ExtResource("2_7oup1")]
 transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 2.02204, 5.45689)
 
-[node name="platform_10x8" parent="." instance=ExtResource("2_7oup1")]
-transform = Transform3D(5.6, 0, 0, 0, 5.6, 0, 0, 0, 5.6, 0.373, 0, -76.4814)
+[node name="platform_10x8" parent="platform_10x10" instance=ExtResource("2_7oup1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0666071, 0, -13.6574)
 
 [node name="PlatformGoal" parent="." instance=ExtResource("3_n0ded")]
 transform = Transform3D(5.6, 0, 0, 0, 5.6, 0, 0, 0, 5.6, 0, 2.78739, -76.9191)

@@ -15,9 +15,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	UpdateTimeDisplayed(MyTimer.time_left)
-	DebugTimer()
+	#DebugTimer()
 	pass
-	
+
+func GetTimeLeft() -> float:
+	return MyTimer.time_left
+
 func UpdateTimeDisplayed(current_time: float) -> void:
 	var WaitTime := str(current_time).pad_decimals(1)
 	MyLabel.text = WaitTime
