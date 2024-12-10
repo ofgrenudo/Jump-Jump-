@@ -17,6 +17,7 @@ var pitch_input := 0.0
 @onready var pitch_pivot := $TwistPivot/PitchPivot
 @onready var camera := $TwistPivot/PitchPivot/Camera3D
 @onready var DeathScreen := $DeathScreen
+@onready var PlayerTimer := $Timer
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -70,7 +71,7 @@ func _physics_process(delta: float) -> void:
 	pitch_input = 0.0
 
 	# Check if player has fallen below the death height
-	if global_transform.origin.y < (DEATH_HEIGHT/3):
+	if global_transform.origin.y < (DEATH_HEIGHT/1.25):
 		_on_player_near_death()
 	if global_transform.origin.y < DEATH_HEIGHT:
 		_on_player_death()
@@ -91,11 +92,11 @@ func _on_player_near_death() -> void:
 func _on_player_death() -> void:
 	# Handle player death (e.g., reset position, reload scene)
 	print("Player has died!")
-
-	DeathScreen.visible = false
-		
-	# Reset the player to a starting position
-	global_transform.origin = Vector3(0, 5, 0)  # Replace with your spawn point
+	PlayerTimer.stop_timer()
+	PlayerTimer.reset_timer()
+	PlayerTimer.start_timer()
 	
-	# Optionally reset velocity
+	# Reset the player to a starting position
 	velocity = Vector3.ZERO
+	DeathScreen.visible = false
+	global_transform.origin = Vector3(0, 5, 0)  # Replace with your spawn point

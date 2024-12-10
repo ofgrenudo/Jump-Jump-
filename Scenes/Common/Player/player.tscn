@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://piasimovkien"]
+[gd_scene load_steps=8 format=3 uid="uid://piasimovkien"]
 
 [ext_resource type="Script" path="res://Scenes/Common/Player/player.gd" id="1_bglpu"]
 [ext_resource type="Material" uid="uid://ch3vxfioopggm" path="res://Media/Textures/tiling_orange_texture.tres" id="2_3udw8"]
 [ext_resource type="PackedScene" uid="uid://bcwcbk540fmst" path="res://Scenes/Common/Player/DeathScreen/death_screen.tscn" id="3_2oyu7"]
 [ext_resource type="PackedScene" uid="uid://dstwa1qqcjgwa" path="res://Scenes/Common/Player/NextLevelTimer/NextLevelTimer.tscn" id="4_k61b0"]
+[ext_resource type="PackedScene" uid="uid://c0dvyy7a8o7ah" path="res://Scenes/Common/Player/Timer/Timer.tscn" id="5_yg77c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a4nkc"]
 radius = 0.6
@@ -40,3 +41,5 @@ visible = false
 
 [node name="NextLevelTimer" parent="." instance=ExtResource("4_k61b0")]
 visible = false
+
+[node name="Timer" parent="." instance=ExtResource("5_yg77c")]

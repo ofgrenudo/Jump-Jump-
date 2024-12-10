@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0dvyy7a8o7ah"]
+
+[ext_resource type="Script" path="res://Scenes/Common/Player/Timer/timer.gd" id="1_7nmin"]
+
+[node name="Timer" type="CanvasLayer"]
+script = ExtResource("1_7nmin")
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "-0:03"

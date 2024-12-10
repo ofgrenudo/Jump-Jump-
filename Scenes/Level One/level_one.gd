@@ -2,9 +2,10 @@ extends Node3D
 
 @onready var PlatformGoal := $PlatformGoal
 @onready var PlayerNextLevelDisplay := $player/NextLevelTimer
-
+@onready var PlayerTimer := $player/Timer
 
 var LevelComplete := false
+var ACHIEVEMENT_TIME := 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +15,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	LevelComplete = PlatformGoal.UserEnteredPlatformGoal
 	if (LevelComplete == true):
+		PlayerTimer.stop_timer()
 		PlayerNextLevelDisplay.visible = true
 		PlayerNextLevelDisplay.StartCountdown()
 		if (PlayerNextLevelDisplay.GetTimeLeft() == 0.0):

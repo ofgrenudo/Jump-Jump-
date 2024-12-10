@@ -6,6 +6,9 @@ extends StaticBody3D
 func _ready() -> void:
 	pass # Replace with function body.
 
+func get_status() -> bool:
+	return UserEnteredPlatformTrigger
+
 # A signal is atttached to the Area3d Node of the PlatformGoal Sceene.
 # When a 3d body touches the Area3d Predefined mask, this function is ran.
 # The Sceene, using the Platform Goal, should be checking the variable in 
