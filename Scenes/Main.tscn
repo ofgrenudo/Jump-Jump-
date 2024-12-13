@@ -23,10 +23,17 @@ layout_mode = 2
 text = "Start"
 alignment = 0
 
+[node name="StatsButton2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Level Select"
+alignment = 0
+
 [node name="StatsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 disabled = true
-text = "Start"
+text = "Statistics
+"
 alignment = 0
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
@@ -41,7 +48,9 @@ text = "Quit"
 alignment = 0
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/StatsButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/StatsButton2" to="." method="_on_stats_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/StatsButton2" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/StatsButton" to="." method="_on_stats_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/StatsButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit Button" to="." method="_on_quit_button_pressed"]
