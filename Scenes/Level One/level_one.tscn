@@ -100,7 +100,7 @@ transform = Transform3D(1, 0, 0, 0, -0.477328, 0.878726, 0, -0.878726, -0.477328
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 46.7033, -242.789)
 pixel_size = 0.25
-text = "Find the Green Platform"
+text = "Find the Green Platform!"
 
 [node name="player" parent="." instance=ExtResource("5_2hkiw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.33773, 0)
