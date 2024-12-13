@@ -14,7 +14,7 @@ var LevelComplete := false
 var up_and_down_trigger_status := false
 var left_and_right_trigger_status := false
 var MOVEMENT_SPEED := 10
-var ACHIEVEMENT_TIME := 20
+var ACHIEVEMENT_TIME := 15
 
 var moving_up = true
 var moving_left = true
@@ -30,6 +30,9 @@ func _process(delta: float) -> void:
 	LevelComplete = PlatformGoal.UserEnteredPlatformGoal
 	up_and_down_trigger_status = up_and_down_trigger.get_status()
 	left_and_right_trigger_status = left_and_right_trigger.get_status()
+	
+	print("Left and Right Trigger Status -> " + str(left_and_right_trigger_status))
+	
 	if (LevelComplete == true):
 		PlayerTimer.stop_timer()
 		PlayerNextLevelDisplay.visible = true
@@ -37,50 +40,28 @@ func _process(delta: float) -> void:
 		if (PlayerNextLevelDisplay.GetTimeLeft() == 0.0):
 			get_tree().change_scene_to_file("res://Scenes/Level Two/level_two.tscn")
 			pass
+	if left_and_right_trigger_status:
+		# Get the current Y position
+		var current_x_position = left_and_right_platform.position.x
+		
+		# Update the position based on direction
+		var delta_position = (MOVEMENT_SPEED/2) * delta * (1 if moving_up else -1)
+		left_and_right_platform.position.x += delta_position
+		
+		# Check if the platform has reached the limits and switch direction
+		if (moving_up and left_and_right_platform.position.x >= 25) or (not moving_up and left_and_right_platform.position.x <= -25):
+			moving_up = not moving_up  # Toggle direction
+
+	if up_and_down_trigger_status:
+		# Get the current Y position
+		var current_y_position = up_and_down_platform.position.y
+		
+		# Update the position based on direction
+		var delta_position = MOVEMENT_SPEED * delta * (1 if moving_up else -1)
+		up_and_down_platform.position.y += delta_position
+		
+		# Check if the platform has reached the limits and switch direction
+		if (moving_up and up_and_down_platform.position.y >= 25) or (not moving_up and up_and_down_platform.position.y <= -65):
+			moving_up = not moving_up  # Toggle direction		
 	
-	if (up_and_down_trigger_status):
-		if up_and_down_trigger_status:
-			# Get the current Y position
-			var current_y_position = up_and_down_platform.position.y
-
-			# Check the direction and update the position accordingly
-			if moving_up:
-				# Move up
-				var future_y_position = current_y_position + MOVEMENT_SPEED * delta
-				up_and_down_platform.position.y = future_y_position
-
-				# Check if the platform has reached the maximum height
-				if up_and_down_platform.position.y >= 25:
-					moving_up = false  # Switch direction to move down
-			else:
-				# Move down
-				var future_y_position = current_y_position - MOVEMENT_SPEED * delta
-				up_and_down_platform.position.y = future_y_position
-
-				# Check if the platform has returned to the bottom
-				if up_and_down_platform.position.y <= -65:
-					moving_up = true  # Switch direction to move up again
-			
-	if (left_and_right_trigger_status):
-		if left_and_right_trigger_status:
-			# Get the current Y position
-			var current_x_position = left_and_right_platform.position.x
-
-			# Check the direction and update the position accordingly
-			if moving_left:
-				# Move up
-				var future_x_position = current_x_position + MOVEMENT_SPEED * delta
-				left_and_right_platform.position.x = future_x_position
-
-				# Check if the platform has reached the maximum height
-				if left_and_right_platform.position.x >= 35:
-					moving_up = false  # Switch direction to move down
-			else:
-				# Move down
-				var future_x_position = current_x_position - MOVEMENT_SPEED * delta
-				left_and_right_platform.position.x = future_x_position
-
-				# Check if the platform has returned to the bottom
-				if left_and_right_platform.position.x <= -35:
-					moving_up = true  # Switch direction to move up again
 	

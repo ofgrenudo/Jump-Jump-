@@ -14,11 +14,6 @@ script = ExtResource("1_7csjj")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.477328, 0.878726, 0, -0.878726, -0.477328, 0, 71.9085, -81.1694)
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 46.7033, -242.789)
-pixel_size = 0.25
-text = "Find the Green Platform"
-
 [node name="player" parent="." instance=ExtResource("6_ssp3m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.33773, 0)
 
@@ -29,7 +24,7 @@ transform = Transform3D(5.6, 0, 0, 0, 5.6, 0, 0, 0, 5.6, 0, 0, -164.632)
 transform = Transform3D(5.6, 0, 0, 0, -2.44784e-07, -5.6, 0, 5.6, -2.44784e-07, 0, -30, -62.205)
 
 [node name="PlatformTrigger" parent="platform_up_and_down" instance=ExtResource("7_60b7w")]
-transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 1.56061, -0.334614)
+transform = Transform3D(0.5, 0, 0, 0, -0.000881313, 0.499999, 0, -0.499999, -0.000881313, 0, 1.56061, -0.251125)
 
 [node name="platform_left_and_right" parent="." instance=ExtResource("5_04mbt")]
 transform = Transform3D(5.6, 0, 0, 0, -2.44784e-07, -5.6, 0, 5.6, -2.44784e-07, 0, 0, -120)
