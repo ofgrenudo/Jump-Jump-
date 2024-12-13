@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2n6qjgm16mil"]
+
+[ext_resource type="Script" path="res://Scenes/Level Three/level_three.gd" id="1_67ok3"]
+[ext_resource type="PackedScene" uid="uid://piasimovkien" path="res://Scenes/Common/Player/player.tscn" id="2_0pl1o"]
+[ext_resource type="PackedScene" uid="uid://stmkpvkiv01c" path="res://Scenes/Common/Platform Goal/platform_goal.tscn" id="3_p0vtv"]
+[ext_resource type="PackedScene" uid="uid://bvaic65bnw4xn" path="res://Scenes/Common/Platform Trigger/platform_trigger.tscn" id="5_8us28"]
+[ext_resource type="PackedScene" uid="uid://rvxofljhgmvm" path="res://Scenes/Common/platform_10x10.tscn" id="6_a5neq"]
+[ext_resource type="PackedScene" uid="uid://d0jnj7fmg86b0" path="res://Scenes/Common/platform_10x5.tscn" id="7_ge0ie"]
+
+[node name="LevelThree" type="Node3D"]
+script = ExtResource("1_67ok3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.477328, 0.878726, 0, -0.878726, -0.477328, 0, 71.9085, -81.1694)
+
+[node name="player" parent="." instance=ExtResource("2_0pl1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.33773, 0)
+
+[node name="PlatformGoal" parent="." instance=ExtResource("3_p0vtv")]
+transform = Transform3D(5.6, 0, 0, 0, 5.6, 0, 0, 0, 5.6, 0, 0, -164.632)
+
+[node name="platform_10x10" parent="." instance=ExtResource("6_a5neq")]
+
+[node name="platform_10x6" parent="platform_10x10" instance=ExtResource("7_ge0ie")]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -5.50328, 2.02204, 0.0115459)
+
+[node name="platform_10x7" parent="platform_10x10" instance=ExtResource("7_ge0ie")]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, 5.50007, 2.02204, 0.0115459)
+
+[node name="platform_10x5" parent="platform_10x10" instance=ExtResource("7_ge0ie")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 2.02204, 5.45689)
+
+[node name="PlatformTrigger" parent="." instance=ExtResource("5_8us28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.31652, -17.2377)
