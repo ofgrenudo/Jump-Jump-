@@ -17,7 +17,6 @@ func start_timer():
 
 func stop_timer():
 	is_timing = false
-	print("Stopping Timer")
 	$TimerLabel.text = "Final Time: " + str(elapsed_time).pad_decimals(2)
 	
 func reset_timer():
